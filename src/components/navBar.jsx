@@ -64,17 +64,20 @@ export default function NavBar() {
 
 
     const handleSearch = async () => {
+        handleDrawerToggle()
 
-        console.log("busando", searhItem)
+
         try {
             const movies = await getMoviesSearchItem(searhItem)
             setData(movies)
+            setSearchTerm("")
             navigate("/result", { state: { movies } })
-            console.log("resultados de ", movies)
+
         } catch (error) {
             console.log("error :", error)
 
         }
+
     }
 
 
@@ -82,23 +85,30 @@ export default function NavBar() {
         if (event.key === 'Enter') {
             event.preventDefault();
             handleSearch();
+
         }
     }
 
     const drawer = (
         <Box sx={{ textAlign: 'center', paddingTop: "20px", position: "relative", height: "100%", backgroundColor: "black", color: "white" }}
             role="presentation"
+
+
+
         >
 
             <List>
                 {menuItems.map((item) => (
-                    <ListItem key={item.path} component={Link} to={item.path} disablePadding >
+                    <ListItem key={item.path} component={Link} to={item.path} disablePadding
+                        onClick={handleDrawerToggle}
+                        onKeyDown={handleDrawerToggle}>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemIcon sx={{ color: "primary.main" }}>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
                         </ListItemButton>
                     </ListItem>
                 ))}
+
             </List>
 
             <Box
@@ -106,14 +116,12 @@ export default function NavBar() {
                     display: "flex",
                     alignItems: "Center",
                     gap: 0,
-
-
-
                     padding: "4px 8px",
                     width: "100%",
                     maxWidth: 180,
                     background: "black"
                 }}
+
 
             >
                 <InputBase
@@ -121,12 +129,22 @@ export default function NavBar() {
                     value={searhItem}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    inputProps={{ "arial-label": "Search" }} />
+                    inputProps={{ "arial-label": "Search" }}
+
+                    sx={{
+                        color: "#fff",
+                        "& input::placeholder": {
+                            color: "#aaa",
+                            opacity: 1,
+                        },
+                        backgroundColor: "white",
+                    }} />
                 <Button
                     variant='contained'
                     color="white"
+
                     onClick={handleSearch}
-                    sx={{ minWidth: "40px", padding: "6px 12px" }}
+                    sx={{ minWidth: "40px", padding: "6px 12px", backgroundColor: "primary.main" }}
                 >
                     <SearchIcon />
                 </Button>
@@ -182,11 +200,11 @@ export default function NavBar() {
                             {menuItems.map((item) => (
                                 <Button key={item.text} color="inherit" startIcon={item.icon} component={Link} to={item.path} sx={{
                                     margin: "5px",
-                                    textAlign:"center",
-                                    flexDirection:"column",
-                                    display:"flex",
-                                    fontSize:"15px"
-                                    
+                                    textAlign: "center",
+                                    flexDirection: "column",
+                                    display: "flex",
+                                    fontSize: "15px"
+
                                 }}
                                 > {item.text} </Button>
                             ))}
@@ -196,12 +214,12 @@ export default function NavBar() {
                                     display: "flex",
                                     alignItems: "Center",
                                     gap: 0,
-                                    margin:"10px",
+                                    margin: "10px",
                                     padding: "4px 8px",
                                     width: "100%",
                                     maxWidth: 180,
                                     background: "black",
-                                    
+
                                 }}
 
                             >

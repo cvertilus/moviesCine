@@ -9,7 +9,6 @@ export default function Footer() {
       backgroundColor: 'black',
       color: 'white',
       py: 4,
-      mt: '20px',
     }}
   >
     <Container maxWidth="lg">
@@ -32,7 +31,7 @@ export default function Footer() {
           <Typography variant="h6" color='warning' gutterBottom>
             Contacto
           </Typography>
-          <Typography variant="body2">Email: email@email.com</Typography>
+          <a href='mailto:vertiluscolby@gmail.com'><Typography variant="body2">vertiluscolby@gmail.com</Typography></a>
           <Typography variant="body2">Tel: +54 11 1234-5678</Typography>
         </Grid>
 

@@ -28,8 +28,6 @@ export default function Discovery() {
 
                 <>
                    
-                        
-
 
                         <CarouselPeliculas ListaPeliculas={moviesData.results} Texto={"Discovery"} />
                     

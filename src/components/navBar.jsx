@@ -70,7 +70,7 @@ export default function NavBar() {
             const movies = await getMoviesSearchItem(searhItem)
             setData(movies)
             navigate("/result", { state: { movies } })
-            console.log(movies)
+            console.log("resultados de ", movies)
         } catch (error) {
             console.log("error :", error)
 

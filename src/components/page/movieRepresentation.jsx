@@ -146,11 +146,12 @@ export default function MovieRepresentation() {
                   startIcon={<PlayArrowIcon />}
                   onClick={() => navigate(`/verPelicula/${params?.id}`)}
                   sx={{
-                    backgroundColor: '#fff',
+                    
                     px: 4,
                     py: 1.5,
                     fontWeight: 'bold',
-                    '&:hover': { backgroundColor: 'green' }
+                    '&:hover': { backgroundColor: 'green' ,
+                    transition: 'all 0.3s ease-in-out' }
                   }}
                 >
                   Ver ahora

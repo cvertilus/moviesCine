@@ -137,7 +137,7 @@ export default function NavBar() {
                             color: "#aaa",
                             opacity: 1,
                         },
-                        backgroundColor: "white",
+                        backgroundColor: "black",
                     }} />
                 <Button
                     variant='contained'

@@ -20,20 +20,24 @@ export default function Dashword() {
     return (
         <>
             <Box sx={{
-                backgroundColor: '#f0f0f0', scrollbarWidth: "none",
+                backgroundColor: 'black', scrollbarWidth: "none",
                 "&::-webkit-scrollbar": {
                     display: "none",
                 },
+                maxWidth:"100%",
                 overflow: "hidden",
 
             }}>
-               
-                <Popular />
-                <UpComing />
-                <Discorvery />
-                <TopRated />
-               
-                
+
+                <Popular carousel={true} />
+                <UpComing carousel={true} />
+                <Discorvery carousel={true} />
+       
+              
+                <TopRated carousel={true}/>
+
+
+
             </Box>
 
 

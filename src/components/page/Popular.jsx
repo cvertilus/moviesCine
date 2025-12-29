@@ -5,16 +5,18 @@ import Hero from '../Hero'
 import CarouselPeliculas from './caroulelPeli'
 
 
-export default function Popular() {
+export default function Popular({ carousel }) {
     const IMAGE_PATH = "https://image.tmdb.org/t/p/original"
     const URL_IMAGE = "https://image.tmdb.org/t/p/original"
+
     const [moviesData, setData] = useState(null);
     const [first, setFirst] = useState(null);
+    const [DiseñoCarousel, setDiseñoCarousel] = useState(carousel);
     const loadMovies = async () => {
         try {
             const movies = await getMoviesEndpoint();
             setData(movies);
-        
+
             if (movies.results && movies.results.length > 0) {
                 const randomIndex = Math.floor(Math.random() * movies.results.length);
                 setFirst(movies.results[randomIndex]);
@@ -31,14 +33,19 @@ export default function Popular() {
     return (
         <>
 
-
-            <Hero pelicula={first} />
-
-            {moviesData && (
+            {DiseñoCarousel && (
                 <>
+                <Hero pelicula={first} />
+
+                {moviesData && (
+        
                     <CarouselPeliculas ListaPeliculas={moviesData.results} Texto={"Populares"} />
 
-                </>)}
+                )}
+                </>
+            
+           )}
+            
 
 
         </>

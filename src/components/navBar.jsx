@@ -104,7 +104,7 @@ export default function NavBar() {
                         onKeyDown={handleDrawerToggle}>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemIcon sx={{ color: "primary.main" }}>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.text} />
+                            <ListItemText primary={item.text}  sx={{color:"white", py:2, }}/>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -119,7 +119,8 @@ export default function NavBar() {
                     padding: "4px 8px",
                     width: "100%",
                     maxWidth: 180,
-                    background: "black"
+                    background: "black",
+                    py:2
                 }}
 
 
@@ -228,12 +229,20 @@ export default function NavBar() {
                                     value={searhItem}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     onKeyDown={handleKeyDown}
-                                    inputProps={{ "arial-label": "Search" }} />
+                                    inputProps={{ "arial-label": "Search" }} 
+                                        sx={{
+                                            color: "#fff",
+                                            "& input::placeholder": {
+                                                color: "#aaa",
+                                                opacity: 1,
+                                            },
+                                        }}
+                                    />
                                 <Button
                                     variant='contained'
                                     color="white"
                                     onClick={handleSearch}
-                                    sx={{ minWidth: "40px", padding: "6px 12px" }}
+                                    sx={{ minWidth: "40px", padding: "6px 12px", backgroundColor: "primary.main" }} 
                                 >
                                     <SearchIcon />
                                 </Button>

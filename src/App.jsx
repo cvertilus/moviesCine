@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashword />}/>
           <Route path="/dashword" element={<Dashword />}/>
-          <Route path='/upcoming' element={<UpComing />} />
+          <Route path='/upcoming' element={<UpComing  />} />
           <Route path='/popular' element={<Popular />} />
           <Route path='/TopRated' element={<TopRated />} />
           <Route path='/discovery' element={<Discovery />} />

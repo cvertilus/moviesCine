@@ -10,16 +10,18 @@ export default function VerPelicula() {
     return (
         <>
 
-
-
             <iframe
                 src={iframeUrl}
                 title={`Película ${id}`}
                 width="100%"
                 height="500px"
                 style={{ border: 'none' }}
-                allow="autoplay; fullscreen; picture-in-picture"
+                // Agregamos la política de permisos completa
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer"
+                // Atributos de compatibilidad total
                 allowFullScreen={true}
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
             />
 
 

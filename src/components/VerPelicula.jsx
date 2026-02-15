@@ -9,8 +9,16 @@ export default function VerPelicula() {
     const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
     return (
         <>
-            <Box sx={{ pt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                
+            <Box sx={{
+                bgcolor: '#000', // Fondo negro total para modo cine
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                p: 2
+            }}>
+
 
                 <iframe
                     src={iframeUrl}
@@ -22,9 +30,9 @@ export default function VerPelicula() {
                     allowFullScreen={true}
                 />
 
-               
+
             </Box>
-            
+
 
         </>
     )

@@ -19,7 +19,7 @@ export default function VerPelicula() {
                     height="500px"
                     style={{ border: 'none', maxWidth: '900px' }}
                     allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
+                    allowFullScreen={true}
                 />
 
                

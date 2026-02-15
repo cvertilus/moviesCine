@@ -9,7 +9,7 @@ export default function VerPelicula() {
     const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
     return (
         <>
-            <Box sx={{ pt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+           
                 
 
                 <iframe
@@ -22,8 +22,7 @@ export default function VerPelicula() {
                     allowFullScreen={true}
                 />
 
-               
-            </Box>
+          
             
 
         </>

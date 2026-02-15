@@ -9,21 +9,21 @@ export default function VerPelicula() {
     const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
     return (
         <>
-           
-                
 
-                <iframe
-                    src={iframeUrl}
-                    title={`Película ${id}`}
-                    width="100%"
-                    height="500px"
-                    style={{ border: 'none', maxWidth: '900px' }}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen={true}
-                />
 
-          
-            
+
+            <iframe
+                src={iframeUrl}
+                title={`Película ${id}`}
+                width="100%"
+                height="500px"
+                style={{ border: 'none' }}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen={true}
+            />
+
+
+
 
         </>
     )

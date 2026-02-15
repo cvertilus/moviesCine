@@ -9,23 +9,22 @@ export default function VerPelicula() {
     const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
     return (
         <>
+            <Box sx={{ pt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                
 
-            <iframe
-                src={iframeUrl}
-                title={`Película ${id}`}
-                width="100%"
-                height="500px"
-                style={{ border: 'none' }}
-                // Agregamos la política de permisos completa
-                allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer"
-                // Atributos de compatibilidad total
-                allowFullScreen={true}
-                webkitallowfullscreen="true"
-                mozallowfullscreen="true"
-            />
+                <iframe
+                    src={iframeUrl}
+                    title={`Película ${id}`}
+                    width="100%"
+                    height="500px"
+                    style={{ border: 'none', maxWidth: '900px' }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen={true}
+                />
 
-
-
+               
+            </Box>
+            
 
         </>
     )

@@ -7,6 +7,15 @@ export default function VerPelicula() {
     const navigate = useNavigate();
 
     const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
+    const handleWatchNow = () => {
+        const externalUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
+        
+        // Abrir en una pestaña nueva (para que no pierdan tu página)
+        window.open(externalUrl, '_blank', 'noopener,noreferrer');
+        
+        // O si prefieres que se vayan de tu página totalmente:
+        // window.location.href = externalUrl;
+    };
     return (
         <>
             <Box sx={{
@@ -18,6 +27,14 @@ export default function VerPelicula() {
                 justifyContent: 'center',
                 p: 2
             }}>
+
+                <Button
+                    variant="contained"
+                    onClick={handleWatchNow}
+                    sx={{ bgcolor: '#C5A059', '&:hover': { bgcolor: '#0F1C2E' } }}
+                >
+                    REPRODUCIR EN SERVIDOR EXTERNO
+                </Button>
 
 
                 <iframe

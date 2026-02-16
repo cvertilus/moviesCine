@@ -25,13 +25,13 @@ export default function VerPelicula() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                p: 2
+                py: 12
             }}>
 
                 <Button
                     variant="contained"
                     onClick={handleWatchNow}
-                    sx={{ bgcolor: '#C5A059', '&:hover': { bgcolor: '#0F1C2E' } }}
+                    sx={{ bgcolor: '#C5A059', '&:hover': { bgcolor: '#0F1C2E' } , mb:5 }}
                 >
                     REPRODUCIR EN SERVIDOR EXTERNO
                 </Button>

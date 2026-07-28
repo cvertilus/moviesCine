@@ -6,9 +6,9 @@ export default function VerPelicula() {
     const { id } = useParams(); // obtenemos el id de la URL
     const navigate = useNavigate();
 
-    const iframeUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
+    const iframeUrl = `https://vidsrc.sbs/embed/movie?tmdb=${id}&ds_lang=es`;
     const handleWatchNow = () => {
-        const externalUrl = `https://vidsrc.xyz/embed/movie?tmdb=${id}&ds_lang=es`;
+        const externalUrl = `https://vidsrc.sbs/embed/movie?tmdb=${id}&ds_lang=es`;
         
         // Abrir en una pestaña nueva (para que no pierdan tu página)
         window.open(externalUrl, '_blank', 'noopener,noreferrer');
